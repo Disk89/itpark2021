@@ -5,7 +5,6 @@ import java.util.Scanner;
 // Условие: Вывести n-ый член последовательности Фибоначчи, где параметр n запрашивается в консоли у пользователя
 public class MyFibonacciNumber {
     public static void main(String[] args) {
-        System.out.println(Long.MAX_VALUE);
         Scanner scanner = new Scanner(System.in);
         int n;
         do {
