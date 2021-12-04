@@ -7,7 +7,7 @@ public final class Car extends Automobile{
         if (distance <= RANGE && distance >= 0) {
             System.out.println("The car drove " + distance + " km, the fuel supply is " + (RANGE - distance) + " km");
         } else {
-            System.out.println("Not enough fuel for this range");
+            System.out.println("Not enough fuel for " + distance + " km");
         }
     }
 }
