@@ -6,7 +6,7 @@ public class Fahrenheit implements Conversionable{
     public Fahrenheit() {
     }
 
-    public Fahrenheit(final double degree) {
+    public Fahrenheit(double degree) {
         this.degree = degree;
     }
 
@@ -20,11 +20,27 @@ public class Fahrenheit implements Conversionable{
 
     @Override
     public Conversionable convertTo(DegreeUnit unit) {
-        return null;
+        if (unit == DegreeUnit.FAHRENHEIT) {
+            return this;
+        }
+        double tmpDegree = (degree - FAHRENHEIT_CONST) * (5.0 / 9);
+        if (unit == DegreeUnit.CELSIUS) {
+            return new Celsius(tmpDegree);
+        }
+        else {
+            return new Kelvin(tmpDegree + ABS_ZERO);
+        }
     }
 
     @Override
     public void convertFrom(DegreeUnit unit) {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Fahrenheit{" +
+               "degree=" + degree +
+               '}';
     }
 }

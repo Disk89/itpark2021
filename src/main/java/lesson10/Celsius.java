@@ -3,6 +3,13 @@ package lesson10;
 public class Celsius implements Conversionable {
     private double degree;
 
+    public Celsius() {
+    }
+
+    public Celsius(final double degree) {
+        this.degree = degree;
+    }
+
     public double getDegree() {
         return degree;
     }
@@ -13,19 +20,28 @@ public class Celsius implements Conversionable {
 
     @Override
     public Conversionable convertTo(DegreeUnit unit) {
+        double tmpDegree;
         if (unit == DegreeUnit.CELSIUS) {
             return this;
         } else if (unit == DegreeUnit.FAHRENHEIT) {
-            double fDegree = degree * 9 / 5 + 32;
-            return new Fahrenheit(fDegree);
+            tmpDegree = degree * (9.0 / 5) + FAHRENHEIT_CONST;
+            return new Fahrenheit(tmpDegree);
         } else {
-            double fKelvin = degree + 273.15;
-            return new Kelvin(fKelvin);
+            tmpDegree = degree + ABS_ZERO;
+            return new Kelvin(tmpDegree);
         }
     }
+
 
     @Override
     public void convertFrom(DegreeUnit unit) {
 
+    }
+
+    @Override
+    public String toString() {
+        return "Celsius{" +
+               "degree=" + degree +
+               '}';
     }
 }
