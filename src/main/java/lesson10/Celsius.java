@@ -32,12 +32,6 @@ public class Celsius implements Conversionable {
         }
     }
 
-
-    @Override
-    public void convertFrom(DegreeUnit unit) {
-
-    }
-
     @Override
     public String toString() {
         return "Celsius{" +

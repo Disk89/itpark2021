@@ -31,11 +31,6 @@ public class Kelvin implements Conversionable{
     }
 
     @Override
-    public void convertFrom(DegreeUnit unit) {
-
-    }
-
-    @Override
     public String toString() {
         return "Kelvin{" +
                "degree=" + degree +

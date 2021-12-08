@@ -33,11 +33,6 @@ public class Fahrenheit implements Conversionable{
     }
 
     @Override
-    public void convertFrom(DegreeUnit unit) {
-
-    }
-
-    @Override
     public String toString() {
         return "Fahrenheit{" +
                "degree=" + degree +
