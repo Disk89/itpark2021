@@ -9,14 +9,13 @@ public class MyArrayMethod {
 
     public static int stringToIntArray(String[][] arr) {
         int sum = 0;
-        if (checkSize(arr)) {
-            for (int i = 0; i < arr.length; i++) {
-                for (int j = 0; j < arr[i].length; j++) {
-                    try {
-                        sum += Integer.valueOf(arr[i][j]);
-                    } catch (NumberFormatException e) {
-                        throw new MyArrayDataException(i, j, arr[i][j]);
-                    }
+        checkSize(arr);
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                try {
+                    sum += Integer.valueOf(arr[i][j]);
+                } catch (NumberFormatException e) {
+                    throw new MyArrayDataException(i, j, arr[i][j]);
                 }
             }
         }
@@ -24,7 +23,7 @@ public class MyArrayMethod {
         return sum;
     }
 
-    private static boolean checkSize(String[][] arr) {
+    private static void checkSize(String[][] arr) {
         if (arr.length != INDEX) {
             throw new MyArraySizeException(arr.length);
         }
@@ -33,6 +32,5 @@ public class MyArrayMethod {
                 throw new MyArraySizeException(arg.length);
             }
         }
-        return true;
     }
 }
