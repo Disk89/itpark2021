@@ -1,8 +1,6 @@
 package lesson13;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /*
 Необходимо создать класс, описывающую сущность работника (Employee), важными характеристиками которого являются ФИО,
@@ -18,10 +16,10 @@ import java.util.Random;
  */
 public class Main {
     public static void main(String[] args) {
-
         List<Employee> employees = DataGenerator.generateEmployees();
         EmployeeUtils.printEmployee(employees,2);
-
-
+        EmployeeUtils.deleteOddEmployees(employees);
+        System.out.println(employees);
+        System.out.println(employees.size());
     }
 }

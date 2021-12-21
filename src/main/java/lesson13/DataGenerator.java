@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 public class DataGenerator {
-    public static List<String> names = Arrays.asList(
+    private static List<String> names = Arrays.asList(
             "Комаров Роберт Данилович",
             "Баранова Милана Васильевна",
             "Воронцова Валентина Артёмовна",

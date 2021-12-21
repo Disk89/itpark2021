@@ -1,7 +1,10 @@
 package lesson13;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 public class EmployeeUtils {
 
@@ -13,6 +16,16 @@ public class EmployeeUtils {
                System.out.println(employee);
            }
         }
+    }
 
+    public static void deleteOddEmployees(List<Employee> employees) {
+        ListIterator<Employee> listIterator = employees.listIterator(employees.size());
+        while (listIterator.hasPrevious()) {
+            listIterator.previous();
+            int index = listIterator.previousIndex();
+            if (index % 2 != 0) {
+                listIterator.remove();
+            }
+        }
     }
 }
